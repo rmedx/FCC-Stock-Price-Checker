@@ -65,7 +65,6 @@ suite('Functional Tests', function() {
           .request(server)
           .get('/api/stock-prices?stock=AAPL&stock=MSFT&like=true')
           .end((err, res) => {
-            counter = res.body.likes;
             assert.equal(res.status, 200);
             assert.equal(res.body["stockData"][0]["stock"], "AAPL");
             assert.equal(res.body["stockData"][1]["stock"], "MSFT");
